@@ -5,13 +5,16 @@ import { Navbar, Nav } from "react-bootstrap";
 class Header extends Component {
   render() {
     return (
-      <Navbar bg="dark"  expand="lg" fixed="top">
+      <Navbar bg="light" expand="lg" fixed="top">
         <Logo className="logo-top" />
-        <Navbar.Brand href="#home" >SyncFusion-Grid</Navbar.Brand>
+        <Navbar.Brand href="#home">
+          <span style={{ marginLeft: "30px" }}></span>SyncFusion-Grid
+        </Navbar.Brand>
         <Nav className="mr-auto">
-          <Nav.Link href="#features" >MENU</Nav.Link>
-          <Nav.Link href="#pricing"  >
-            Logged in as: <b>Guest User: </b> Loggout
+          <Nav.Link href="#features">MENU</Nav.Link>
+
+          <Nav.Link href="#pricing" style={{ marginLeft: "500px" }}>
+            <small>(Logged in as:)</small> <b>Guest User </b> Sign out
           </Nav.Link>
         </Nav>
       </Navbar>

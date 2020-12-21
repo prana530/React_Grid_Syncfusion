@@ -6,8 +6,8 @@ class Footer extends Component {
   render() {
     return (
       <div>
-        <Navbar  bg="dark" expand="lg" sticky="bottom" >
-          <Logo />
+        <Navbar  bg="dark" expand="lg" fixed="bottom"  >
+          <Logo className="logo-footer"/>
         </Navbar>
       </div>
     );

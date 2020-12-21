@@ -27,7 +27,7 @@ class GridControl extends Component<any, any> {
     };
   }
 
-  public pageSettings: PageSettingsModel = { pageSize: 6 };
+  public pageSettings: PageSettingsModel = { pageSize: 4 };
 
   public toolbarOptions: ToolbarItems[] = [
     "Search",
