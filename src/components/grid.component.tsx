@@ -141,7 +141,7 @@ class GridControl extends Component<any, any> {
               allowSorting={false}
             />
           </ColumnsDirective>
-          <Inject services={[Page, Sort, Search, Edit, Toolbar, Filter]} />
+          <Inject services= {[Page, Sort, Search, Edit, Toolbar, Filter]} />
         </GridComponent>
       </Container>
     );
