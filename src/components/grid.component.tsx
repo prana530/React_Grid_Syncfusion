@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { getValue } from "@syncfusion/ej2-base";
 import {
   ColumnDirective,
   ColumnsDirective,
@@ -15,7 +16,6 @@ import {
   EditSettingsModel,
   Column,
 } from "@syncfusion/ej2-react-grids";
-import { getValue } from "@syncfusion/ej2-base";
 
 class GridControl extends Component<any, any> {
   constructor(props: any) {
@@ -26,6 +26,7 @@ class GridControl extends Component<any, any> {
     };
   }
 
+  
   public pageSettings: PageSettingsModel = { pageSize: 4 };
 
   public toolbarOptions: ToolbarItems[] = [

@@ -32,53 +32,14 @@ body {
   background-color: #a3e4d7;
 }
 
-.e-attr {
-  background: #d7f0f4;
-}
 
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #333;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-footer {
-  background-color: #333;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 .logo {
   height: 60px;
   align-content: left;
-}
-
-.logo-top {
-  height: 100px;
-  align-content: left;
-}
-
-.header {
-  display: inline-flex;
-  justify-content: center;
-  align-content: center;
 }
 
 .grid-contol {

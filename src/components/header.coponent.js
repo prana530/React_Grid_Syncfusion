@@ -4,7 +4,7 @@ import Logo from "./logo.component";
 function HeaderComponent() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <Logo className="logo-top" />
+      <Logo />
       <a class="navbar-brand" href="#">
         Tutorial
       </a>
@@ -36,7 +36,7 @@ function HeaderComponent() {
         </div>
         <div className="float-right sign-out">
           Logged in as :<b>Guest User</b>
-          <a className="nav-link text-danger" href="#">
+          <a className="nav-link text-danger " href="#">
             Sign Out
           </a>
         </div>

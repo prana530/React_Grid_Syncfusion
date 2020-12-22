@@ -1,16 +1,15 @@
 import React from "react";
-import Footer from "./components/footer.component";
-import Grid from "./components/grid.component";
-import HeaderComponent from "./components/header.coponent";
-
 import "./App.css";
+import FooterComponent from "./components/footer.component";
+import GridComponent from "./components/grid.component";
+import HeaderComponent from "./components/header.coponent";
 
 function App() {
   return (
     <div className="App">
       <HeaderComponent />
-      <Grid />
-      <Footer />
+      <GridComponent />
+      <FooterComponent />
     </div>
   );
 }
