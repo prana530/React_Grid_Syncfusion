@@ -21,15 +21,15 @@ body {
 }
 
 .below-30 {
-  background-color: orangered;
+  background-color: #82e0aa;
 }
 
 .below-80 {
-  background-color: yellow;
+  background-color: #f6ddcc;
 }
 
 .above-80 {
-  background-color: greenyellow;
+  background-color: #a3e4d7;
 }
 
 .e-attr {
@@ -75,11 +75,6 @@ body {
   align-content: left;
 }
 
-.logo-footer {
-  height: 100px;
-  align-content: left;
-}
-
 .header {
   display: inline-flex;
   justify-content: center;
@@ -87,6 +82,11 @@ body {
 }
 
 .grid-contol {
-  margin: 10px;
-  padding-top: 6%;
+  margin: 0;
+  padding-top: 0;
+}
+
+.sign-out {
+  position: absolute;
+  right: 20px;
 }

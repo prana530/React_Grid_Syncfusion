@@ -1,19 +1,19 @@
 import React, { Component } from "react";
 import Logo from "./logo.component";
-import { Navbar, Nav } from "react-bootstrap";
 
 class Footer extends Component {
   render() {
     return (
       <div>
-        <Navbar  bg="dark" expand="lg" fixed="bottom"  >
-          <Logo className="logo-footer"/>
-        </Navbar>
+        <footer className="bg-secondary fixed-bottom" expand="lg">
+          <Logo />
+          <p className="text-light">
+            Copyright &copy; 2020 React learning bootcamp
+          </p>
+        </footer>
       </div>
     );
   }
 }
-
-
 
 export default Footer;

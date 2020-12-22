@@ -16,7 +16,6 @@ import {
   Column,
 } from "@syncfusion/ej2-react-grids";
 import { getValue } from "@syncfusion/ej2-base";
-import { Container, Button } from "react-bootstrap";
 
 class GridControl extends Component<any, any> {
   constructor(props: any) {
@@ -71,18 +70,31 @@ class GridControl extends Component<any, any> {
 
   conditionalTemplate(args: any): any {
     if (args && args.Freight < 5) {
-      return <Button variant="secondary">Silver</Button>;
+      return (
+        <button type="button" className="btn btn-secondary">
+          Silver
+        </button>
+      );
     } else if (args && args.Freight <= 10) {
-      return <Button variant="warning">Gold</Button>;
+      return (
+        <button type="button" className="btn btn-warning">
+          Gold
+        </button>
+      );
     } else if (args && args.Freight > 10) {
-      return <Button variant="info">Platinum</Button>;
+      return (
+        <button type="button" className="btn btn-info">
+          Platinum
+        </button>
+      );
     }
   }
 
   render(): any {
     return (
-      <Container color="dark">
-        <GridComponent className="grid-contol"
+      <div>
+        <GridComponent
+          className="grid-contol"
           dataSource={this.state.jsonData}
           allowPaging={true}
           pageSettings={this.pageSettings}
@@ -141,9 +153,9 @@ class GridControl extends Component<any, any> {
               allowSorting={false}
             />
           </ColumnsDirective>
-          <Inject services= {[Page, Sort, Search, Edit, Toolbar, Filter]} />
+          <Inject services={[Page, Sort, Search, Edit, Toolbar, Filter]} />
         </GridComponent>
-      </Container>
+      </div>
     );
   }
 }
