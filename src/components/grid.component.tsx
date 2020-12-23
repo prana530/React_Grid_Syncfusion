@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { getValue } from "@syncfusion/ej2-base";
+import { faDollarSign, faRibbon } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   ColumnDirective,
   ColumnsDirective,
@@ -26,7 +28,6 @@ class GridControl extends Component<any, any> {
     };
   }
 
-  
   public pageSettings: PageSettingsModel = { pageSize: 4 };
 
   public toolbarOptions: ToolbarItems[] = [
@@ -54,7 +55,10 @@ class GridControl extends Component<any, any> {
       "https://ej2services.syncfusion.com/production/web-services/api/orders"
     )
       .then((res) => res.json())
-      .then((data) => this.setData(data));
+      .then((data) => {
+        console.log("Original record count is " + data.length);
+        this.setData(data.filter((d: any) => d.Verified));
+      });
   }
 
   queryCellInfoMethod(args: any) {
@@ -73,22 +77,32 @@ class GridControl extends Component<any, any> {
     if (args && args.Freight < 5) {
       return (
         <button type="button" className="btn btn-secondary">
-          Silver
+          <FontAwesomeIcon icon={faRibbon} /> Silver
         </button>
       );
     } else if (args && args.Freight <= 10) {
       return (
         <button type="button" className="btn btn-warning">
-          Gold
+          <FontAwesomeIcon icon={faRibbon} /> Gold
         </button>
       );
     } else if (args && args.Freight > 10) {
       return (
         <button type="button" className="btn btn-info">
-          Platinum
+          <FontAwesomeIcon icon={faRibbon} /> Platinum
         </button>
       );
     }
+  }
+
+  addDollerSign(args: any): any {
+    console.log(args);
+    return (
+      <div>
+        <FontAwesomeIcon icon={faDollarSign} size="1x" />{" "}
+        {Math.ceil(args.Freight)}
+      </div>
+    );
   }
 
   render(): any {
@@ -132,6 +146,7 @@ class GridControl extends Component<any, any> {
               width="50"
               textAlign="Right"
               format="C2"
+              template={this.addDollerSign}
             />
             <ColumnDirective
               field="ShipAddress"

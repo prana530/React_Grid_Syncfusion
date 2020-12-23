@@ -1,6 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
 import Logo from "./logo.component";
-
 
 function FooterComponent(){
   return (
