@@ -33,6 +33,7 @@ body {
 }
 
 .App {
+  
   text-align: center;
 }
 
@@ -49,4 +50,13 @@ body {
 .sign-out {
   position: absolute;
   right: 20px;
+}
+
+
+.loginGrid{
+  background-image: linear-gradient( white,#6c757d);
+  padding:18% 0%;
+  background-size: cover;
+  color:white;
+  text-shadow: 2px 2px grey;
 }

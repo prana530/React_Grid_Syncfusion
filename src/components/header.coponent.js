@@ -1,9 +1,10 @@
 import React from "react";
 import Logo from "./logo.component";
-import {  faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function HeaderComponent() {
+import LogginStatus from "./LogginStatus"
+
+function HeaderComponent({handleButtonClickAtApp,isLoggedIn}) {
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <Logo />
@@ -24,25 +25,20 @@ function HeaderComponent() {
       <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div className="navbar-nav">
           <a className="nav-item nav-link active" href="#">
-            Home <span className="sr-only">(current)</span>
+            Home <span className="sr-only"></span>
           </a>
           <a className="nav-item nav-link" href="#">
-            Features
+            Online Giving
           </a>
           <a className="nav-item nav-link" href="#">
-            About Us
+            Email
           </a>
           <a className="nav-item nav-link " href="#">
-            Services
+            Portal
           </a>
         </div>
-        <div className="float-right sign-out">
-          Logged in as :<b>Guest User</b>
-          <a className="nav-link text-danger " href="#">
-            Sign Out
-            <FontAwesomeIcon className="ml-1" icon={faSignOutAlt} size="1x" />
-          </a>
-        </div>
+     
+        <LogginStatus handleButtonClick={ handleButtonClickAtApp} isLoggedIn={isLoggedIn}/>
       </div>
     </nav>
   );

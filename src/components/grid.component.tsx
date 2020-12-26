@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { getValue } from "@syncfusion/ej2-base";
 import { faDollarSign, faRibbon } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import {
   ColumnDirective,
   ColumnsDirective,
@@ -17,6 +18,7 @@ import {
   Edit,
   EditSettingsModel,
   Column,
+  Group,
 } from "@syncfusion/ej2-react-grids";
 
 class GridControl extends Component<any, any> {
@@ -40,6 +42,7 @@ class GridControl extends Component<any, any> {
 
   public editSettings: EditSettingsModel = {
     allowEditing: true,
+
     allowAdding: true,
     allowDeleting: true,
   };
@@ -96,7 +99,6 @@ class GridControl extends Component<any, any> {
   }
 
   addDollerSign(args: any): any {
-    console.log(args);
     return (
       <div>
         <FontAwesomeIcon icon={faDollarSign} size="1x" />{" "}
@@ -106,73 +108,86 @@ class GridControl extends Component<any, any> {
   }
 
   render(): any {
-    return (
-      <div>
-        <GridComponent
-          className="grid-contol"
-          dataSource={this.state.jsonData}
-          allowPaging={true}
-          pageSettings={this.pageSettings}
-          allowSorting={true}
-          toolbar={this.toolbarOptions}
-          allowFiltering={true}
-          queryCellInfo={this.queryCellInfoMethod}
-          allowTextWrap={true}
-          textWrapSettings={{ wrapMode: "Content" }}
-          editSettings={this.editSettings}
-        >
-          <ColumnsDirective>
-            <ColumnDirective
-              field="EmployeeID"
-              headerText="Employee ID"
-              width="60"
-              textAlign="Right"
+    const isLoggedIn = this.props.isLoggedIn;
+
+    if (isLoggedIn) {
+      return (
+        <div>
+          <GridComponent
+            className="grid-contol"
+            dataSource={this.state.jsonData}
+            allowPaging={true}
+            pageSettings={this.pageSettings}
+            allowSorting={true}
+            toolbar={this.toolbarOptions}
+            allowFiltering={true}
+            queryCellInfo={this.queryCellInfoMethod}
+            allowTextWrap={true}
+            textWrapSettings={{ wrapMode: "Content" }}
+            editSettings={this.editSettings}
+            allowGrouping={true}
+          >
+            <ColumnsDirective>
+              <ColumnDirective
+                field="EmployeeID"
+                headerText="Employee ID"
+                width="60"
+                textAlign="Right"
+              />
+              <ColumnDirective
+                field="CustomerID"
+                headerText="Customer ID"
+                width="60"
+                textAlign="Right"
+              />
+              <ColumnDirective
+                field="OrderID"
+                headerText="Order ID"
+                width="60"
+                textAlign="Right"
+              />
+              <ColumnDirective
+                field="Freight"
+                headerText="Freight"
+                width="50"
+                textAlign="Right"
+                format="C2"
+                template={this.addDollerSign}
+              />
+              <ColumnDirective
+                field="ShipAddress"
+                headerText="Ship Address"
+                width="80"
+                textAlign="Right"
+              />
+              <ColumnDirective
+                field="OrderDate"
+                headerText="Order Date"
+                width="80"
+                textAlign="Right"
+              />
+              <ColumnDirective
+                field="Subscription"
+                headerText="Subscription"
+                width="50"
+                textAlign="Right"
+                template={this.conditionalTemplate}
+                allowSorting={false}
+              />
+            </ColumnsDirective>
+            <Inject
+              services={[Page, Group, Sort, Search, Edit, Toolbar, Filter]}
             />
-            <ColumnDirective
-              field="CustomerID"
-              headerText="Customer ID"
-              width="60"
-              textAlign="Right"
-            />
-            <ColumnDirective
-              field="OrderID"
-              headerText="Order ID"
-              width="60"
-              textAlign="Right"
-            />
-            <ColumnDirective
-              field="Freight"
-              headerText="Freight"
-              width="50"
-              textAlign="Right"
-              format="C2"
-              template={this.addDollerSign}
-            />
-            <ColumnDirective
-              field="ShipAddress"
-              headerText="Ship Address"
-              width="80"
-              textAlign="Right"
-            />
-            <ColumnDirective
-              field="OrderDate"
-              headerText="Order Date"
-              width="80"
-              textAlign="Right"
-            />
-            <ColumnDirective
-              field="Subscription"
-              headerText="Subscription"
-              width="50"
-              textAlign="Right"
-              template={this.conditionalTemplate}
-              allowSorting={false}
-            />
-          </ColumnsDirective>
-          <Inject services={[Page, Sort, Search, Edit, Toolbar, Filter]} />
-        </GridComponent>
-      </div>
-    );
+          </GridComponent>
+        </div>
+      );
+    } else {
+      return (
+        <h4 className="loginGrid ">
+          Please Click on <FontAwesomeIcon icon={faExternalLinkAlt} /> <b>Sign In </b> to see the GRID
+        </h4>
+      );
+    }
   }
 }
 
