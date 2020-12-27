@@ -42,7 +42,6 @@ class GridControl extends Component<any, any> {
 
   public editSettings: EditSettingsModel = {
     allowEditing: true,
-
     allowAdding: true,
     allowDeleting: true,
   };

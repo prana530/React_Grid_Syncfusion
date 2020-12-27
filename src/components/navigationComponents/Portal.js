@@ -6,15 +6,12 @@ function Portal({ isLoggedIn }) {
     return (
       <div className="card mx-auto mt-5  bg-light" style={{ width: "90rem" }}>
         <div className="card-body ">
-          <h5 className="card-title m-2 text-primary">
-            Welcome to Portal Module
-          </h5>
+          <h5 className="card-title m-2 text-primary">Portal Module</h5>
           <p className="card-text p-5">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.Some quick example text to build on the
-            card title and make up the bulk of the card's content.Some quick
-            example text to build on the card title and make up the bulk of the
-            card's content.
+            “The creation of Anthology is both welcomed and needed to enhance an
+            institution’s access to data, analytics and insights, while
+            continuing to accelerate the evolution of the technology landscape
+            in higher education.”
           </p>
         </div>
       </div>

@@ -1,6 +1,6 @@
+import "./App.css";
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import "./App.css";
 import FooterComponent from "./components/footer.component";
 import GridComponent from "./components/grid.component";
 import HeaderComponent from "./components/header.coponent";

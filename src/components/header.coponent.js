@@ -8,7 +8,7 @@ function HeaderComponent({ handleButtonClickAtApp, isLoggedIn }) {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <Logo />
-      <a className="navbar-brand">
+      <a className="navbar-brand   ">
         <Link to="/"> Compass </Link>
       </a>
       <button

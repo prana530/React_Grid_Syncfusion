@@ -5,7 +5,7 @@ function Home({ isLoggedIn }) {
     <div className="card mx-auto mt-5 text-white bg-info" style={{ width: "90rem" }}>
       <div className="card-body ">
         <h5 className="card-title m-2 ">
-          {  isLoggedIn?"Welcome Registered User":"Welcome Guest User" }
+          {  isLoggedIn?"Welcome Registered User": "Welcome Guest User" }
         </h5>
         <p className="card-text p-5">
           Some quick example text to build on the card title and make up the
