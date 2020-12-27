@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { getValue } from "@syncfusion/ej2-base";
 import { faDollarSign, faRibbon } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
+import SignInMessageComponent from "./signInMessage.component";
 import {
   ColumnDirective,
   ColumnsDirective,
@@ -109,7 +109,6 @@ class GridControl extends Component<any, any> {
 
   render(): any {
     const isLoggedIn = this.props.isLoggedIn;
-
     if (isLoggedIn) {
       return (
         <div>
@@ -182,11 +181,7 @@ class GridControl extends Component<any, any> {
         </div>
       );
     } else {
-      return (
-        <h4 className="loginGrid ">
-          Please Click on <FontAwesomeIcon icon={faExternalLinkAlt} /> <b>Sign In </b> to see the GRID
-        </h4>
-      );
+      return <SignInMessageComponent />;
     }
   }
 }
