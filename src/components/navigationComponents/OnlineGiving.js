@@ -5,7 +5,7 @@ import SignInMessageComponent from "../signInMessage.component";
 function OnlineGiving({ isLoggedIn }) {
   if (isLoggedIn) {
     return (
-      <div className="card mx-auto mt-5 bg-light " style={{ width: "90rem" }}>
+      <div className="card mx-auto mt-5 bg-light width80">
         <div className="card-body ">
           <h5 className="card-title m-2 text-primary">Online Giving Module</h5>
           <p className="card-text p-5">

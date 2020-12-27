@@ -33,7 +33,6 @@ body {
 }
 
 .App {
-  
   text-align: center;
 }
 
@@ -52,13 +51,14 @@ body {
   right: 20px;
 }
 
-
-.loginGrid{
-  background-image: linear-gradient( white,#6c757d);
-  padding:18% 0%;
+.loginGrid {
+  background-image: linear-gradient(white, #6c757d);
+  padding: 18% 0%;
   background-size: cover;
-  color:white;
+  color: white;
   text-shadow: 2px 2px grey;
 }
 
- 
+.width80 {
+  width: "80%";
+}
