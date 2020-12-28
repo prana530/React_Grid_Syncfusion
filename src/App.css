@@ -49,6 +49,7 @@ body {
 .sign-out {
   position: absolute;
   right: 20px;
+  cursor: pointer;
 }
 
 .loginGrid {
@@ -60,5 +61,7 @@ body {
 }
 
 .width80 {
-  width: "80%";
+  width: 80%;
 }
+ 
+ 

@@ -8,9 +8,10 @@ function HeaderComponent({ handleButtonClickAtApp, isLoggedIn }) {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <Logo />
-      <a className="navbar-brand   ">
-        <Link to="/"> Compass </Link>
-      </a>
+      {/* <Link className="navbar-brand" to="/">
+        {" "}
+        Compass{" "}
+      </Link> */}
       <button
         className="navbar-toggler"
         type="button"
@@ -22,25 +23,30 @@ function HeaderComponent({ handleButtonClickAtApp, isLoggedIn }) {
       >
         <span className="navbar-toggler-icon"></span>
       </button>
-      <div className="collapse navbar-collapse " id="navbarNavAltMarkup">
+      <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div className="navbar-nav">
-          <a className="nav-item nav-link active">
-            <Link to="/"> Home </Link> <span className="sr-only"></span>
-          </a>
-          <a className="nav-item nav-link ">
-            <Link to="/syncFusion"> SyncFusion</Link>{" "}
-            <span className="sr-only"></span>
-          </a>
-
-          <a className="nav-item nav-link">
-            <Link to="/onlineGiving"> Online Giving</Link>
-          </a>
-          <a className="nav-item nav-link">
-            <Link to="/email"> Email</Link>
-          </a>
-          <a className="nav-item nav-link ">
-            <Link to="/portal"> Portal</Link>
-          </a>
+          <Link className="nav-item nav-link active text-dark " to="/">
+            {" "}
+            Home{" "}
+          </Link>{" "}
+          <span className="sr-only"></span>
+          <Link className="nav-item nav-link text-dark" to="/syncFusion">
+            {" "}
+            SyncFusion
+          </Link>{" "}
+          <span className="sr-only"></span>
+          <Link className="nav-item nav-link text-dark " to="/onlineGiving">
+            {" "}
+            Online Giving
+          </Link>
+          <Link className="nav-item nav-link  text-dark " to="/email">
+            {" "}
+            Email
+          </Link>
+          <Link className="nav-item nav-link text-dark " to="/portal">
+            {" "}
+            Portal
+          </Link>
         </div>
         <LogginStatus
           handleButtonClick={handleButtonClickAtApp}

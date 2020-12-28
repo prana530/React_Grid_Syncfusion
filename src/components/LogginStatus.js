@@ -6,27 +6,27 @@ function LogginStatus({ handleButtonClick, isLoggedIn }) {
   if (isLoggedIn) {
     return (
       <div className="float-right sign-out">
-        <a
+        <div
           className="nav-link text-danger "
           href="#"
           onClick={handleButtonClick}
         >
           <b> Sign Out</b>
           <FontAwesomeIcon className="ml-1" icon={faSignOutAlt} size="2x" />
-        </a>
+        </div>
       </div>
     );
   } else {
     return (
       <div className="float-right sign-out">
-        <a
+        <div
           className="nav-link text-danger "
           href="#"
           onClick={handleButtonClick}
         >
           <b> Sign In</b>
           <FontAwesomeIcon className="ml-1" icon={faSignInAlt} size="2x" />
-        </a>
+        </div>
       </div>
     );
   }
